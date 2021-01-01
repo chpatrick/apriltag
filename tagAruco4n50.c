@@ -1,0 +1,108 @@
+#include <stdlib.h>
+#include "tagAruco4n50.h"
+apriltag_family_t *tagAruco4n50_create()
+{
+apriltag_family_t *tf = calloc(1, sizeof(apriltag_family_t));
+tf->name = strdup("tagAruco4n50");
+tf->h = 0;
+tf->ncodes = 50;
+tf->codes = calloc(50, sizeof(uint64_t));
+tf->codes[0] = 0x000000000000b532UL;
+tf->codes[1] = 0x0000000000000f9aUL;
+tf->codes[2] = 0x000000000000332dUL;
+tf->codes[3] = 0x0000000000009946UL;
+tf->codes[4] = 0x000000000000549eUL;
+tf->codes[5] = 0x00000000000079cdUL;
+tf->codes[6] = 0x0000000000009e2eUL;
+tf->codes[7] = 0x000000000000c4f2UL;
+tf->codes[8] = 0x000000000000fedaUL;
+tf->codes[9] = 0x000000000000cf56UL;
+tf->codes[10] = 0x000000000000f991UL;
+tf->codes[11] = 0x00000000000011a7UL;
+tf->codes[12] = 0x0000000000000eb7UL;
+tf->codes[13] = 0x0000000000002a0fUL;
+tf->codes[14] = 0x00000000000024b1UL;
+tf->codes[15] = 0x000000000000263eUL;
+tf->codes[16] = 0x0000000000004665UL;
+tf->codes[17] = 0x0000000000006600UL;
+tf->codes[18] = 0x0000000000006c5eUL;
+tf->codes[19] = 0x00000000000076afUL;
+tf->codes[20] = 0x000000000000868bUL;
+tf->codes[21] = 0x000000000000b02bUL;
+tf->codes[22] = 0x000000000000ccd5UL;
+tf->codes[23] = 0x000000000000dd82UL;
+tf->codes[24] = 0x000000000000fe47UL;
+tf->codes[25] = 0x0000000000009471UL;
+tf->codes[26] = 0x000000000000ace4UL;
+tf->codes[27] = 0x000000000000a554UL;
+tf->codes[28] = 0x0000000000002123UL;
+tf->codes[29] = 0x000000000000346fUL;
+tf->codes[30] = 0x0000000000004415UL;
+tf->codes[31] = 0x00000000000057b2UL;
+tf->codes[32] = 0x0000000000009ecfUL;
+tf->codes[33] = 0x000000000000f0cbUL;
+tf->codes[34] = 0x00000000000008aeUL;
+tf->codes[35] = 0x0000000000000929UL;
+tf->codes[36] = 0x0000000000001875UL;
+tf->codes[37] = 0x00000000000004ffUL;
+tf->codes[38] = 0x0000000000000df6UL;
+tf->codes[39] = 0x0000000000001c5aUL;
+tf->codes[40] = 0x0000000000001718UL;
+tf->codes[41] = 0x0000000000002a28UL;
+tf->codes[42] = 0x000000000000328cUL;
+tf->codes[43] = 0x00000000000038b2UL;
+tf->codes[44] = 0x00000000000024e8UL;
+tf->codes[45] = 0x0000000000002eebUL;
+tf->codes[46] = 0x0000000000002d3fUL;
+tf->codes[47] = 0x0000000000004b64UL;
+tf->codes[48] = 0x000000000000502eUL;
+tf->codes[49] = 0x0000000000005013UL;
+tf->nbits = 16;
+tf->bit_x = calloc(16, sizeof(uint32_t));
+tf->bit_y = calloc(16, sizeof(uint32_t));
+tf->bit_x[0] = 1;
+tf->bit_y[0] = 1;
+tf->bit_x[1] = 2;
+tf->bit_y[1] = 1;
+tf->bit_x[2] = 3;
+tf->bit_y[2] = 1;
+tf->bit_x[3] = 4;
+tf->bit_y[3] = 1;
+tf->bit_x[4] = 1;
+tf->bit_y[4] = 2;
+tf->bit_x[5] = 2;
+tf->bit_y[5] = 2;
+tf->bit_x[6] = 3;
+tf->bit_y[6] = 2;
+tf->bit_x[7] = 4;
+tf->bit_y[7] = 2;
+tf->bit_x[8] = 1;
+tf->bit_y[8] = 3;
+tf->bit_x[9] = 2;
+tf->bit_y[9] = 3;
+tf->bit_x[10] = 3;
+tf->bit_y[10] = 3;
+tf->bit_x[11] = 4;
+tf->bit_y[11] = 3;
+tf->bit_x[12] = 1;
+tf->bit_y[12] = 4;
+tf->bit_x[13] = 2;
+tf->bit_y[13] = 4;
+tf->bit_x[14] = 3;
+tf->bit_y[14] = 4;
+tf->bit_x[15] = 4;
+tf->bit_y[15] = 4;
+tf->width_at_border = 6;
+tf->total_width = 8;
+tf->reversed_border = false;
+return tf;
+}
+
+void tagAruco4n50_destroy(apriltag_family_t *tf)
+{
+   free(tf->codes);
+   free(tf->bit_x);
+   free(tf->bit_y);
+   free(tf->name);
+   free(tf);
+}
